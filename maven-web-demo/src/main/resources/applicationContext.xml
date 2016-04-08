@@ -1,0 +1,58 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+	<!-- Application context in class path -->
+	<!-- temporary changed from applicationContext-*.xml to applicationContext*.xml -->
+
+	<bean id="jndiDataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName">
+			<value>oracle.jdbc.driver.OracleDriver</value>
+		</property>
+		<property name="url">
+			<value>jdbc:oracle:thin:@172.17.16.11:1521:ecv1db</value>
+		</property>
+		<property name="username">
+			<value>LEEDSUPGRADE</value>
+		</property>
+		<property name="password">
+			<value>LEEDSUPGRADE</value>
+		</property>
+	</bean>
+	<bean id="sessionFactory" class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="dataSource">
+			<ref bean="jndiDataSource" />
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">org.hibernate.dialect.Oracle10gDialect</prop>
+				<prop key="hibernate.show_sql">true</prop>
+				<prop key="hibernate.format_sql">true</prop>
+				<prop key="hibernate.query.factory_class">org.hibernate.hql.classic.ClassicQueryTranslatorFactory</prop>
+			</props>
+		</property>
+		<property name="mappingResources">
+			<list>
+				<value>com/green/he/domain/Dbuser.hbm.xml</value>				
+			</list>
+		</property>
+
+	</bean>	
+
+	<bean id="dao" class="com.green.he.DAO.impl.DbUserDAOImpl">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	
+	<bean id="dbService" class="com.green.he.service.impl.DbuserServiecImpl">
+		<property name="dao" ref="dao"/>
+	</bean>
+	<bean id="userLoginController" class="com.green.he.controller.UserLoginController">
+		<property name="dbService" ref="dbService"/>
+	</bean>
+	
+	<bean class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor"/>
+
+</beans>

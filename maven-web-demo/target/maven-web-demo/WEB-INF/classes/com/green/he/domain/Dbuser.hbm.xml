@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2013-10-22 15:28:34 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.green.he.domain.Dbuser" table="DBUSER" schema="ECV1DB">
+        <id name="userId" type="int">
+            <column name="USERID" precision="5" scale="0" />
+            <generator class="assigned" />
+        </id>
+        <property name="username" type="string">
+            <column name="USERNAME" length="20" />
+        </property>
+        <property name="createdBy" type="string">
+            <column name="CREATEDBY" length="20" />
+        </property>
+        <property name="createdDate" type="date">
+            <column name="CREATEDDATE" length="7" />
+        </property>
+    </class>
+</hibernate-mapping>

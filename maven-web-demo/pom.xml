@@ -1,0 +1,204 @@
+<?xml version="1.0"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  <!-- <parent>
+    <groupId>com.ecvision.b2b</groupId>
+    <artifactId>suite-dependency</artifactId>
+    <version>B2B4.1-B07</version>
+  </parent> -->
+  <groupId>com.gh.demo</groupId>
+  <artifactId>maven-web-demo</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>war</packaging>
+  <name>maven-web-demo Maven Webapp</name>
+  <url>http://maven.apache.org</url>
+  
+  <!-- Spring MVC support -->
+  <dependencies>
+  	<dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-core</artifactId>
+        <version>3.2.4.RELEASE</version>
+    </dependency>     
+    <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-context</artifactId>
+        <version>3.2.4.RELEASE</version>
+    </dependency>
+    <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-web</artifactId>
+        <version>3.2.4.RELEASE</version>
+    </dependency>
+    
+    <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-orm</artifactId>
+        <version>3.2.4.RELEASE</version>
+    </dependency>
+    
+    <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-webmvc</artifactId>
+        <version>3.2.4.RELEASE</version>
+    </dependency>
+     
+    <dependency>
+	<groupId>org.springframework</groupId>
+	<artifactId>spring-jdbc</artifactId>
+	<version>3.2.4.RELEASE</version>
+	</dependency>
+	<dependency>
+        <groupId>com.oracle</groupId>    
+        <artifactId>ojdbc14</artifactId>
+        <version>10.2.0.4.0</version>
+    </dependency>
+     <!-- <dependency>
+          <groupId>com.oracle</groupId>
+          <artifactId>oracle</artifactId>
+          <version>5.0.0</version>
+      </dependency>-->
+		
+	<!-- Hibernate support -->
+		<dependency>
+        <groupId>org.hibernate</groupId>
+        <artifactId>hibernate-core</artifactId>
+        <version>3.6.5.Final</version>
+    </dependency>
+    <dependency>
+        <groupId>javassist</groupId>
+        <artifactId>javassist</artifactId>
+        <version>3.12.0.GA</version>
+    </dependency>
+    <dependency>
+        <groupId>antlr</groupId>
+        <artifactId>antlr</artifactId>
+        <version>2.7.6</version>
+    </dependency>
+    <dependency>
+        <groupId>commons-collections</groupId>
+        <artifactId>commons-collections</artifactId>
+        <version>3.1</version>
+    </dependency>
+    <dependency>
+        <groupId>dom4j</groupId>
+        <artifactId>dom4j</artifactId>
+        <version>1.6.1</version>
+    </dependency>
+    <dependency>
+        <groupId>javax.transaction</groupId>
+        <artifactId>jta</artifactId>
+        <version>1.1</version>
+    </dependency>
+    
+    <dependency>
+        <groupId>org.hibernate.javax.persistence</groupId>
+        <artifactId>hibernate-jpa-2.0-api</artifactId>
+        <version>1.0.0.Final</version>
+    </dependency>
+     <dependency>
+     	<groupId>commons-email</groupId>
+     	<artifactId>commons-email</artifactId>
+         <version>1.2</version>
+     </dependency>
+      <dependency>
+          <groupId>org.apache.httpcomponents</groupId>
+          <artifactId>httpcore</artifactId>
+          <version>4.2.2</version>
+      </dependency>
+     <!-- <dependency>
+     	<groupId>javax.annotation</groupId>
+     	<artifactId></artifactId>
+     	<version></version>
+     </dependency> -->
+    
+	<!-- Struts support -->
+	<!-- <dependency>
+        <groupId>org.apache.struts</groupId>
+        <artifactId>struts2-core</artifactId>
+        <version>2.3.8</version>
+	</dependency> -->
+	
+	 <!-- Servlet support -->
+    <dependency>
+        <groupId>javax.servlet</groupId>    
+        <artifactId>servlet-api</artifactId>    
+        <version>2.5</version>    
+        <scope>provided</scope>    
+    </dependency>
+    
+  <dependency>  
+        <groupId>org.slf4j</groupId>  
+        <artifactId>slf4j-log4j12</artifactId>  
+        <version>1.7.2</version>  
+    </dependency>  
+    
+    
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <scope>test</scope>
+    </dependency>
+	<dependency>
+		<groupId>org.jboss.spec.javax.annotation</groupId>
+		<artifactId>jboss-annotations-api_1.2_spec</artifactId>
+		<version>1.0.0.Final</version>
+	</dependency>
+
+      <dependency>
+          <groupId>org.apache.httpcomponents</groupId>
+          <artifactId>httpclient</artifactId>
+          <version>4.3</version>
+      </dependency>
+      <dependency>
+          <groupId>org.codehaus.jackson</groupId>
+          <artifactId>jackson-mapper-asl</artifactId>
+          <version>1.7.5</version>
+      </dependency>
+      <dependency>
+          <groupId>org.json</groupId>
+          <artifactId>json</artifactId>
+          <version>20090211</version>
+      </dependency>
+      <dependency>
+          <groupId>commons-codec</groupId>
+          <artifactId>commons-codec</artifactId>
+          <version>1.10</version>
+      </dependency>
+
+  </dependencies>
+
+
+
+    <build>
+    <finalName>maven-web-demo</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-antrun-plugin</artifactId>
+                <version>1.7</version>
+                <executions>
+                    <execution>
+                        <id>prepare-hbm-copy</id>
+                        <phase>generate-resources</phase>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                        <configuration>
+                            <tasks>
+                                <copy todir="target/classes/com/green/he/domain"
+                                      overwrite="true">
+                                    <fileset dir="src/main/java/com/green/he/domain">
+                                        <include name="**/*.hbm.xml" />
+                                    </fileset>
+                                </copy>
+                            </tasks>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>
